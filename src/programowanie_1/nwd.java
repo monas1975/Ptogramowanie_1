@@ -54,6 +54,19 @@ public class nwd {
         System.out.println("NWW dla liczb: " + tab[0] + ", " + tab[1] + tab[2] + " = " + wynik4);
 
 
+        boolean wynik7;
+        for(int i=1; i<=100; i++){
+          ;
+
+          if (wynik7 = prime(i)) {
+              System.out.println("liczba " + i + "  JEST liczba pierwsza");
+          }
+          else System.out.println("liczba " + i + "  NIE jest liczba pierwsza");
+
+        }
+
+        checkYears();
+
 
 
 
@@ -101,12 +114,60 @@ public class nwd {
        // result = nww(tabPom[0],nww(tabPom));
 
 
-
-
-
-
         return result;
 
+    }
+
+    public static boolean prime(int n){
+        boolean result = false;
+
+        for(int i=1; i<=n; i++){
+
+         if (n%i == 0 & i!=1 & i!=n) {
+             result = false;
+             break;
+         } else result=true;
+
+
+        }
+            return result;
+    }
+
+    public static boolean czyPrzystepny(int year){
+        boolean  wynik = false;
+
+        if (((year%4 ==0) & year%100 !=0) | (year%400 ==0)){
+            wynik = true;
+        }
+        else wynik=false;
+
+
+        return wynik;
+    }
+
+    public static void checkYears(){
+        int amountOfYears;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Podaj ilosc lat, ktore chcesz sprawdzic");
+        amountOfYears = scanner.nextInt();
+
+        int[] tablica = new int[amountOfYears];
+
+        for(int i=0; i<tablica.length;i++){
+            System.out.println("podaj " + i+1 + " rok ");
+            tablica[i] = scanner.nextInt();
+        }
+
+
+        for(int i=0;i<tablica.length;i++){
+
+            if(czyPrzystepny(tablica[i])){
+                System.out.println("Rok " + tablica[0] + "JEST przestepny");
+            }
+            else System.out.println("Rok " + tablica[0] + "nie jest przystepny");
+
+        }
 
 
 
