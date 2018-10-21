@@ -65,7 +65,9 @@ public class nwd {
 
         }
 
-        checkYears();
+        //checkYears();
+
+        money.howMuchCatch(1765.54);
 
 
 
